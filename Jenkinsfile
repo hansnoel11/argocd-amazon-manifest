@@ -20,7 +20,7 @@ node {
                         sh "sed -i 's+${IMAGE}.*+${IMAGE}:${DOCKERTAG}+g' deployment.yml"
                         sh "cat deployment.yml"
                         sh "git add ."
-                        sh "git commit -m 'update by jenkins: ${env.BUILD_NUMBER}'"
+                        sh "git commit -m 'push from jenkins: ${env.BUILD_NUMBER}'"
                         sh "git push https://${GIT_USERNAME}:${GIT_PASSWORD}@github.com/${GIT_USERNAME}/argocd-amazon-manifest.git HEAD:main"
              }
          }
